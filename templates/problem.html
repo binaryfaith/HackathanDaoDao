@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Problems</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <img src="{{ url_for('static', filename='img/download.png') }}" alt="dojo">
+            <h1>Problems</h1>
+        </div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Chapters</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">Chapter 1>></a>
+                    </li>
+                    <li>
+                        <a href="#">Chapter 2>></a>
+                    </li>
+                    <li>
+                        <a href="#">Chapter 3>></a>
+                    </li>
+                    <li>
+                        <a href="#">Chapter 4>></a>
+                    </li>
+                    <li>
+                        <a href="#">Chapter 5>></a>
+                    </li>
+                    <li>
+                        <a href="#">Chapter 6>></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <h2 class="well">Algorithm Problems</h2>
+        {%for problem in problem %}
+        <div class="panel panel-default">
+                <div class="panel-heading">{{problem['title']}}</div>
+                <div class="panel-body">{{problem['problem']}}</div>
+              </div>
+
+        <h2 class="well">Teams</h2>
+        {%for i in range(8)%} {%for j in range(1)%}
+        <div class="panel-group">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapse1">{{i+1}}:-->{{team[i][j]}}&nbsp;&nbsp;{{team[i][j+1]}}&nbsp;&nbsp;{{team[i][j+2]}}</a>
+                    </h4>
+                  </div>
+                  <div id="collapse1" class="panel-collapse collapse">
+                    <div class="panel-body"><a href="/problem/solution/{{problem['title']}}">Solution</a></div>
+                  </div>
+                </div>
+              </div>
+        {%endfor%} {%endfor%} {%endfor%}
+    </div>
+
+</body>
+
+</html>

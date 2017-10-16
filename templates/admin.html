@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Admin</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Admin Page</h1>
+        </div>
+        <label for="email">Title:</label>
+        <input type="text" class="form-control" id="title" placeholder="enter title" name="title">
+        <br>
+
+        <div class="form-group">
+            <label for="comment">Problem:</label>
+            <textarea class="form-control" rows="5" id="comment" name="problem"></textarea>
+        </div>
+        <div class="btn-group">
+            <select name="chapters" id="" class="btn-group">
+                <option value="Select Chapter">Select Chapter</option>
+                <option value="Fundamentals">Fundamentals</option>
+                <option value="Arrays">Arrays</option>
+                <option value="Strings And Associative Arrays">Strings And Associative Arrays</option>
+                <option value="Linked Lists">Linked Lists</option>
+                <option value="Queues And Stacks">Queues And Stacks</option>
+            </select>
+            <input type="submit" value="Post on DashBoard" class="btn-group">
+            <form action="/team" method="post" class="btn-group">
+                <button value="team" name="team" class="btn-group">Get Teams!</button>
+            </form class="btn-group">
+            <button value="team" name="team" class="btn-group" href="/dashboard">To the DashBoard</button>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
